@@ -51,12 +51,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Verify SSH secrets
+        run: |
+          echo "SSH_HOST: ${{ secrets.SSH_HOST != '' }}"
+          echo "SSH_USERNAME: ${{ secrets.SSH_USERNAME != '' }}"
+          echo "SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY != '' }}"
+
       - name: SSH into server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || '22' }}  # Default to 22 if not specified
           script: |
             cd /violettarusovich/cd_docker_project
             docker compose pull
