@@ -1,2 +1,2 @@
+prometheus_flask_exporter
 flask
-pytest>=7.0.0
