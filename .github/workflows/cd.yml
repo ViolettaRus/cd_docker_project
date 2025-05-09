@@ -64,7 +64,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT || '22' }}  # Default to 22 if not specified
+          port: '22'
           script: |
             cd /violettarusovich/cd_docker_project
             docker compose pull
