@@ -56,7 +56,5 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /violettarusovich/cd_docker_project
-            docker compose pull
-            docker compose down
-            docker compose up -d
+            echo "Successfully connected!"
+            ls -la
