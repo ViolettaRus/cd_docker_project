@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app  # Монтирование кода в контейнер
+      - /app/__pycache__  # Игнорирование кеша Python
+    environment:
+      - FLASK_ENV=development  # Режим разработки
+    ports:
+      - "5001:5000"
+      - "5678:5678"  # Порт для дебаггера (если нужно)
+    command: flask run --host=0.0.0.0 --reload  # Автоперезагрузка
