@@ -4,4 +4,4 @@ COPY requirements.txt requirements.txt
 COPY app.py app.py
 RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5001
-CMD ['python', 'app.py']
+CMD ["python", "app.py"]
