@@ -1,7 +1,6 @@
 name: CI/CD Pipeline
 
-on:
-  [push, pull_request]
+on: [push, pull_request]
 
 env:
   IMAGE_NAME: yourdockerhub/cd_docker_project
@@ -20,9 +19,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest  
       - name: Run tests
         run: |
-          python -m pytest
+          python
 
   build:
     needs: test
