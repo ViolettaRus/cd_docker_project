@@ -55,9 +55,8 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT || 22 }}
           script: |
-            cd /root/ci_cd_practice_5
+            cd /violettarusovich/cd_docker_project
             docker compose pull
             docker compose down
             docker compose up -d
