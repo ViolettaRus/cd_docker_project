@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on: [push, pull_request]
 
 env:
-  IMAGE_NAME: yourdockerhub/cd_docker_project
+  IMAGE_NAME: vi02/cd_docker_project
   IMAGE_TAG: latest
 
 jobs:

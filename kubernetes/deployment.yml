@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: yourdockerhub/cd_docker_project:latest
+          image: vi02/cd_docker_project:latest
           ports:
             - containerPort: 5001
           resources:
